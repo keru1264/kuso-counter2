@@ -31,6 +31,7 @@ window.onload = function() {
 	stream.value = ""
 	font.value = "0"
 	color.value = "#ffffff"
+	tcolor.value = "#000000"
 	bgcolor.value = "#00FF00"
 }
 </script>
@@ -62,6 +63,8 @@ window.onload = function() {
 	<input type="checkbox" checked="true" name="align" id="align" value="center">
 	<h6>color:</h6>
     <input type="color" name="color" id="color" value="#ffffff">
+	<h6>thickness color:</h6>
+    <input type="color" name="tcolor" id="tcolor" value="#000000">
 	<h6>bgcolor:</h6>
     <input type="color" name="bgcolor" id="bgcolor" value="#00FF00">
 	<p><input type="submit" class="btn btn-primary" value="OK"></p>

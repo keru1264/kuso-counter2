@@ -17,30 +17,31 @@ $fonts = [
     '5' => ['\'33535gillsansmt\'' => 'url(\'fnt/33535gillsansmt.woff\') format(\'woff\')']
 ];
 
-$shadows = sprintf('-0 -%1$s %2$s #000000, 0 -%1$s %2$s #000000, -0 %1$s %2$s #000000, 0 %1$s %2$s #000000, -%1$s -0 %2$s #000000,
-	%1$s -0 %2$s #000000, -%1$s 0 %2$s #000000, %1$s 0 %2$s #000000, -1px -%1$s %2$s #000000, 1px -%1$s %2$s #000000,
-	-1px %1$s %2$s #000000, 1px %1$s %2$s #000000, -%1$s -1px %2$s #000000, %1$s -1px %2$s #000000, -%1$s 1px %2$s #000000,
-	%1$s 1px %2$s #000000, -2px -%1$s %2$s #000000, 2px -%1$s %2$s #000000, -2px %1$s %2$s #000000, 2px  %1$s %2$s #000000,
-	-%1$s -2px %2$s #000000, %1$s -2px %2$s #000000, -%1$s 2px %2$s #000000, %1$s 2px %2$s #000000, -%1$s -%1$s %2$s #000000,
-	%1$s -%1$s %2$s #000000, -%1$s %1$s %2$s #000000, %1$s %1$s %2$s #000000, -%1$s -%1$s %2$s #000000, %1$s -%1$s %2$s #000000,
-	-%1$s %1$s %2$s #000000, %1$s %1$s %2$s #000000', $line, $thicc);
+$shadows = sprintf('-0 -%1$s %3$s %2$s, 0 -%1$s %3$s %2$s, -0 %1$s %3$s %2$s, 0 %1$s %3$s %2$s, -%1$s -0 %3$s %2$s,
+	%1$s -0 %3$s %2$s, -%1$s 0 %3$s %2$s, %1$s 0 %3$s %2$s, -1px -%1$s %3$s %2$s, 1px -%1$s %3$s %2$s,
+	-1px %1$s %3$s %2$s, 1px %1$s %3$s %2$s, -%1$s -1px %3$s %2$s, %1$s -1px %3$s %2$s, -%1$s 1px %3$s %2$s,
+	%1$s 1px %3$s %2$s, -2px -%1$s %3$s %2$s, 2px -%1$s %3$s %2$s, -2px %1$s %3$s %2$s, 2px  %1$s %3$s %2$s,
+	-%1$s -2px %3$s %2$s, %1$s -2px %3$s %2$s, -%1$s 2px %3$s %2$s, %1$s 2px %3$s %2$s, -%1$s -%1$s %3$s %2$s,
+	%1$s -%1$s %3$s %2$s, -%1$s %1$s %3$s %2$s, %1$s %1$s %3$s %2$s, -%1$s -%1$s %3$s %2$s, %1$s -%1$s %3$s %2$s,
+	-%1$s %1$s %3$s %2$s, %1$s %1$s %3$s %2$s', $line, $tcolor, $thicc);
 	
 function GetParam(array $get):array {
     $ready_style = [
         'fontsize' => null,
         'color' => null,
         'bgcolor' => null,
-        'line' => null,
+        'tcolor' => null,
         'thicc' => null,
-        'align' => null
+		'align' => null
     ];
     $styles =[
         'fontsize' => ['chr' => false, 'min' => 1, 'max' => 480, 'def' => '79px'],
         'color' => ['chr' => true, 'def' => '#ffffff'],
         'bgcolor' => ['chr' => true, 'def' => '#00FF00'],
+        'tcolor' => ['chr' => true, 'def' => '#000000'],
         'line' => ['chr' => false, 'min' => 0, 'max' => 6, 'def' => '6px'],
         'thicc' => ['chr' => false, 'min' => 0, 'max' => 6, 'def' => '3px'],
-        'align' => ['chr' => true, 'def' => 'auto']
+		'align' => ['chr' => true, 'def' => 'auto']
         ];
 
     foreach ($styles as $key => $value){
@@ -58,7 +59,6 @@ function GetParam(array $get):array {
     }
     return $ready_style;
 }
-
 foreach ($fonts as $key => $value){
     if ($_GET['font'] == $key){
        $font = key($value);
