@@ -32,7 +32,7 @@ function GetParam(array $get):array {
         'bgcolor' => null,
         'line' => null,
         'thicc' => null,
-		'align' => null
+        'align' => null
     ];
     $styles =[
         'fontsize' => ['chr' => false, 'min' => 1, 'max' => 480, 'def' => '79px'],
@@ -40,7 +40,7 @@ function GetParam(array $get):array {
         'bgcolor' => ['chr' => true, 'def' => '#00FF00'],
         'line' => ['chr' => false, 'min' => 0, 'max' => 6, 'def' => '6px'],
         'thicc' => ['chr' => false, 'min' => 0, 'max' => 6, 'def' => '3px'],
-		'align' => ['chr' => true, 'def' => 'auto']
+        'align' => ['chr' => true, 'def' => 'auto']
         ];
 
     foreach ($styles as $key => $value){
